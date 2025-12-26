@@ -1,0 +1,8 @@
+access-key-id: ${LITESTREAM_ACCESS_KEY_ID}
+secret-access-key: ${LITESTREAM_SECRET_ACCESS_KEY}
+
+dbs:
+  - path: /app/data/kuma.db
+    replicas:
+      - url: s3://${LITESTREAM_BUCKET}/${LITESTREAM_REPLICA_PATH}
+        endpoint: ${LITESTREAM_S3_ENDPOINT}
